@@ -21,7 +21,7 @@
       <div class="jobs-center">
         <JobAccessButton
           :jobIndex="jobIndex"
-          :updateJobIndex="updateJobIndex"
+          @changeJobIndex="updateJobIndex"
           :jobs="jobs"
         />
         <JobDetails :job="jobs[jobIndex]" />
@@ -65,8 +65,10 @@ export default {
       } catch (error) {
         return error;
       }
+    },
 
-      console.log(this.jobs);
+    updateJobIndex(indexArg) {
+      return (this.jobIndex = indexArg);
     },
   },
 

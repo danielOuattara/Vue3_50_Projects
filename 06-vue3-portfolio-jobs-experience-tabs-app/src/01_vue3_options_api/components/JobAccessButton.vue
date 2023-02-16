@@ -4,6 +4,7 @@
       v-for="(job, index) in jobs"
       :key="job.id"
       :class="`job-btn ${index === jobIndex && 'active-btn'}`"
+      @click="$emit('changeJobIndex', index)"
     >
       {{ job.company }}
     </button>
@@ -14,9 +15,6 @@
 export default {
   name: "JobAccessButton",
   props: ["jobIndex", "jobs"],
-  mounted() {
-    console.log("---> 1 ", this.jobIndex);
-    console.log(" ---- 2 ", this.jobs);
-  },
+  emits: ["changeJobIndex"],
 };
 </script>
