@@ -11,5 +11,3 @@ export default {
   components: { AppOptionsAPI, AppCompositionAPI },
 };
 </script>
-
-<style lang="scss" scoped></style>
