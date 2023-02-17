@@ -1,6 +1,6 @@
 <template>
   <AppOptionsAPI />
-  <!-- <AppCompositionAPI /> -->
+  <AppCompositionAPI />
 </template>
 
 <script>
