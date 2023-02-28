@@ -1,5 +1,6 @@
 <template>
   <AppOptionsAPI />
+  <hr />
   <AppCompositionAPI />
 </template>
 
