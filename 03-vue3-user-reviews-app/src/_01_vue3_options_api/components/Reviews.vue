@@ -55,7 +55,6 @@ export default {
       }
     },
     getPreviousQuote() {
-      console.log(this.index);
       this.index = this.checkIndex(this.index - 1);
       return;
     },
@@ -68,7 +67,6 @@ export default {
       if (randomIndex === this.index) {
         randomIndex = this.checkIndex(randomIndex - 1);
       }
-      console.log(randomIndex);
       return (this.index = randomIndex);
     },
   },
