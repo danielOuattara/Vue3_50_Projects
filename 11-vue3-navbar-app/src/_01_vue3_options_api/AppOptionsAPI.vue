@@ -1,5 +1,5 @@
 <template>
-  <p :style="{ marginLeft: '5rem' }">options API solution</p>
+  <b><p :style="{ marginLeft: '5rem' }">options API solution</p></b>
   <Navbar />
 </template>
 
