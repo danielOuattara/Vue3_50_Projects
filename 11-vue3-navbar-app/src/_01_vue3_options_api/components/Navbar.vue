@@ -13,6 +13,7 @@ How to smoothly toggle links:
     previous situation
 
 
+option API solution
 ------------------------------------------- */ -->
 
 <template>
