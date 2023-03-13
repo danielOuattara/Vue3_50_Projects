@@ -11,18 +11,18 @@
           name="itemName"
           id="itemName"
           class="grocery"
-          v-model="itemName.value"
+          v-model="itemName"
         />
 
         <button type="submit" class="submit-btn">
-          {{ state.isEditing ? "edit" : "submit" }}
+          {{ isEditing ? "edit" : "submit" }}
         </button>
       </div>
     </form>
 
-    <div class="grocery-container" v-if="state.itemsList.length > 0">
+    <div class="grocery-container" v-if="itemsList.length > 0">
       <List
-        :itemsList="state.itemsList"
+        :itemsList="itemsList"
         @deleteItemEvent="deleteItem"
         @editItemEvent="editItem"
       />
@@ -57,10 +57,10 @@ export default {
     });
 
     function retrieveLocalStorage() {
-      let itemsList = localStorage.getItem("itemsList-vue3-composition-v1");
+      let itemsList = localStorage.getItem("itemsList-vue3-composition-v3");
       if (itemsList) {
         return JSON.parse(
-          localStorage.getItem("itemsList-vue3-composition-v1"),
+          localStorage.getItem("itemsList-vue3-composition-v3"),
         );
       } else {
         return [];
@@ -90,7 +90,7 @@ export default {
           ...state.itemsList,
           {
             id: new Date().getTime().toString(),
-            title: itemName.value,
+            title: state.itemName,
           },
         ];
         showAlert(true, "success", "item added successfully");
@@ -128,14 +128,12 @@ export default {
       (newItemsList, oldItemsList) => {
         if (newItemsList !== oldItemsList) {
           localStorage.setItem(
-            "itemsList-vue3-composition-v2",
+            "itemsList-vue3-composition-v3",
             JSON.stringify(state.itemsList),
           );
         }
       },
     );
-
-    console.log("{...toRefs(state)} = ", { ...toRefs(state) });
 
     return {
       ...toRefs(state),
