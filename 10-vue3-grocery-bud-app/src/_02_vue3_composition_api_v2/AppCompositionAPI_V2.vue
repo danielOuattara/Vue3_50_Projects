@@ -86,11 +86,12 @@ export default {
         showAlert(true, "success", "Item successfully edited");
       } else {
         // add new item + show add alert
+        console.log("state.value = ", state.value);
         state.value.itemsList = [
           ...state.value.itemsList,
           {
             id: new Date().getTime().toString(),
-            title: itemName.value,
+            title: state.value.itemName,
           },
         ];
         showAlert(true, "success", "item added successfully");
