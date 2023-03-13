@@ -7,28 +7,11 @@ export default {
   name: "Alert",
   props: ["alert", "showAlert"],
 
-  // mounted() {
-  //   // console.log(this.alert);
-  //   // console.log(this.alert.message);
-  //   clearTimeout(this.timeoutID);
-  // },
-
   data() {
     return {
       timeoutID: undefined,
     };
   },
-
-  // watch: {
-  //   alert(newAlert, oldAlert) {
-  //     if (newAlert !== oldAlert) {
-  //       console.log("in watch");
-  //       this.timeoutID = setTimeout(() => {
-  //         return this.showAlert();
-  //       }, 1500);
-  //     }
-  //   },
-  // },
 
   updated() {
     this.timeoutID = setTimeout(() => {

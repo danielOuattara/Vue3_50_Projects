@@ -67,8 +67,6 @@ export default {
     },
   },
 
-  computed: {},
-
   methods: {
     retrieveLocalStorage() {
       let itemsList = localStorage.getItem("itemsList-vue3-optionsAPI");
