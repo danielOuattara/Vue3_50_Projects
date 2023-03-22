@@ -1,4 +1,7 @@
 <template>
+  <br />
+  <hr />
+  <br />
   <p style="text-align: center">composition API solution !</p>
   <Home @onToggleSideBar="toggleSideBar" @onToggleModal="toggleModal" />
   <Modal :isModalOpen="isModalOpen" @onToggleModal="toggleModal" />
